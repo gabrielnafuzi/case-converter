@@ -21,7 +21,7 @@ body {
 
 .textBox {
   resize: none;
-  width: 600px;
+  width: 800px;
   height: 220px;
   padding: 10px;
   font-size: 18px;
@@ -30,8 +30,11 @@ body {
 }
 
 .buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 button {

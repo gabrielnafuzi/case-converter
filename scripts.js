@@ -5,6 +5,7 @@ const allToLowerCase = document.querySelector('.allToLowerCase');
 const alternative = document.querySelector('.alternative');
 const copyToClipBoard = document.querySelector('.copyToClipBoard');
 const downloadText = document.querySelector('.downloadText');
+const clearText = document.querySelector('.clearText');
 
 capilatizeFirst.addEventListener('click', () => {
   const textValue = textBox.value;
@@ -52,6 +53,10 @@ downloadText.addEventListener('click', () => {
 
   downloadString(textValue);
 })
+
+clearText.addEventListener('click', () =>  {
+  textBox.value = '';
+});
 
 function downloadString(text) {
   const blob = new Blob([text], { type: 'text/plain' });
