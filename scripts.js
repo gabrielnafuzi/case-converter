@@ -43,9 +43,15 @@ alternative.addEventListener('click', () => {
 });
 
 copyToClipBoard.addEventListener('click', () => {
+  const toast = document.getElementById("toast");
+
   textBox.select();
   document.execCommand('copy');
 
+  toast.className = "show";
+  setTimeout(() => {
+    toast.className = toast.className.replace("show", "");
+  }, 2000);
 });
 
 downloadText.addEventListener('click', () => {

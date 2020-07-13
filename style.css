@@ -54,13 +54,66 @@ button:hover {
   background-color: #513e8f;
 }
 
+#toast {
+  visibility: hidden;
+  width: 240px;
+  margin-left: -125px;
+  background-color: #333333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 10px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 16px;
+}
+
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 1.7s;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .textBox {
+    width: 640px;
+  }
+}
+
 @media screen and (max-width: 650px) {
   .textBox {
     width: 440px;
   }
 }
 
-@media screen and (max-width: 444px) {
+@media screen and (max-width: 475px) {
+  .container {
+    margin-top: 60px;
+  }
+
   .textBox {
     width: 310px;
   }
