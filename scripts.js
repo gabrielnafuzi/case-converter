@@ -6,6 +6,11 @@ const alternative = document.querySelector('.alternative');
 const copyToClipBoard = document.querySelector('.copyToClipBoard');
 const downloadText = document.querySelector('.downloadText');
 const clearText = document.querySelector('.clearText');
+const counterChars = document.querySelector('#counterChars');
+
+textBox.addEventListener('keyup', () => {
+  counterChars.value = textBox.value.length;
+});
 
 capilatizeFirst.addEventListener('click', () => {
   const textValue = textBox.value;
@@ -35,7 +40,7 @@ alternative.addEventListener('click', () => {
     if (!(index % 2 == 0)) {
       letters[index] = letters[index].toUpperCase();
     }
-  };
+  }
 
   const lettersAfter = letters.join('');
 
@@ -43,14 +48,14 @@ alternative.addEventListener('click', () => {
 });
 
 copyToClipBoard.addEventListener('click', () => {
-  const toast = document.getElementById("toast");
+  const toast = document.getElementById('toast');
 
   textBox.select();
   document.execCommand('copy');
 
-  toast.className = "show";
+  toast.className = 'show';
   setTimeout(() => {
-    toast.className = toast.className.replace("show", "");
+    toast.className = toast.className.replace('show', '');
   }, 2000);
 });
 
@@ -58,9 +63,9 @@ downloadText.addEventListener('click', () => {
   const textValue = textBox.value;
 
   downloadString(textValue);
-})
+});
 
-clearText.addEventListener('click', () =>  {
+clearText.addEventListener('click', () => {
   textBox.value = '';
 });
 
@@ -69,7 +74,7 @@ function downloadString(text) {
   const a = document.createElement('a');
 
   if (text === '') return;
-  
+
   a.download = 'text.txt';
   a.href = URL.createObjectURL(blob);
   a.dataset.downloadurl = ['text/txt', a.download, a.href].join(':');
@@ -87,5 +92,6 @@ function capilatizeFirstLetter(text) {
   return text
     .toLowerCase()
     .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(' ');
+    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' ');
 }
