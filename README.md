@@ -1,1 +1,1 @@
-![case-converter](https://user-images.githubusercontent.com/58908279/87283121-5a438100-c4cb-11ea-9cbf-beac427b5f39.gif)
+![case-converter](https://user-images.githubusercontent.com/58908279/87975327-daf11700-caa1-11ea-9bed-376b6f102001.gif)
