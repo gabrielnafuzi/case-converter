@@ -9,7 +9,7 @@ const clearText = document.querySelector('.clearText');
 const counterChars = document.querySelector('#counterChars');
 
 textBox.addEventListener('keyup', () => {
-  counterChars.value = textBox.value.length;
+  counterChars.innerText = textBox.value.length;
 });
 
 capilatizeFirst.addEventListener('click', () => {
@@ -67,6 +67,7 @@ downloadText.addEventListener('click', () => {
 
 clearText.addEventListener('click', () => {
   textBox.value = '';
+  counterChars.innerText = 0;
 });
 
 function downloadString(text) {

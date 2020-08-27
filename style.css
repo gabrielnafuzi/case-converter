@@ -29,6 +29,10 @@ body {
   border: 1px solid #7159c1;
 }
 
+.counter {
+  margin-bottom: 14px;
+}
+
 #counterChars {
   background: transparent;
   border: transparent;
